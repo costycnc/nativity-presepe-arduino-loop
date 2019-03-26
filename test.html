@@ -1,11 +1,21 @@
 <html>
-<textarea rows="4" cols="50">
+<textarea id="costy"rows="1" cols="50">
 </textarea>
 <button onclick="myFunction()">Create</button>
+<button onclick="copyclip()">Copy</button>
 <table>
 	<tbody>
+                <tr>
+			<td align="center"></td>
+			<td align="center">motor1</td>
+			<td align="center">motor2</td>
+			<td align="center">motor3</td>
+			<td align="center">motor4</td>
+			
+		</tr>
 	
 		<tr>
+                        <td>Time 0</td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
@@ -13,6 +23,15 @@
 			
 		</tr>
 		<tr>
+			<td>Time 1</td>
+                        <td><input  type="text" value="0"></td>
+			<td><input  type="text" value="0"></td>
+			<td><input  type="text" value="0"></td>
+			<td><input  type="text" value="0"></td>
+			
+		</tr>
+		<tr>
+			<td>Time 2</td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
@@ -20,6 +39,7 @@
 			
 		</tr>
 		<tr>
+			<td>Time 3</td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
@@ -27,6 +47,7 @@
 			
 		</tr>
 		<tr>
+			<td>Time 4</td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
@@ -34,6 +55,7 @@
 			
 		</tr>
 		<tr>
+			<td>Time 5</td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
@@ -41,6 +63,7 @@
 			
 		</tr>
 		<tr>
+			<td>Time 6</td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
@@ -48,6 +71,7 @@
 			
 		</tr>
 		<tr>
+			<td>Time 7</td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
@@ -55,6 +79,7 @@
 			
 		</tr>
 		<tr>
+			<td>Time 8</td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
@@ -62,13 +87,7 @@
 			
 		</tr>
 		<tr>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			
-		</tr>
-		<tr>
+			<td>Time 9</td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
 			<td><input  type="text" value="0"></td>
@@ -84,12 +103,19 @@
 var i;
 var s;
 function myFunction() {
-document.getElementsByTagName("textarea")[0].value="";
+ document.getElementById("costy").value="";
 for (i = 0; i < 120; i++) { 
-s=document.getElementsByTagName("textarea")[0].value;
+s=document.getElementById("costy").value;
 s=s+document.getElementsByTagName("input")[i].value;
-document.getElementsByTagName("textarea")[0].value=s;
+document.getElementById("costy").value=s;
 }
+}
+
+function copyclip() {
+  var copyText = document.getElementById("costy");
+  copyText.select();
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
 }
 
 </script>
