@@ -1,67 +1,159 @@
-/*
-  Serial Event example
+#include <EEPROM.h>
+byte value;
+byte ledState = LOW;
+int contor=0;
+int motori=0;
+int bucla=0;
+int timeint;
+int motor;
+unsigned long currentMillis = millis();
+unsigned long previousMillis = 0;      
+unsigned long interval; 
+char myvalue[40];
+String my_name;
 
-  When new serial data arrives, this sketch adds it to a String.
-  When a newline is received, the loop prints the string and clears it.
-
-  A good test for this is to try it with a GPS receiver that sends out
-  NMEA 0183 sentences.
-
-  NOTE: The serialEvent() feature is not available on the Leonardo, Micro, or
-  other ATmega32U4 based boards.
-
-  created 9 May 2011
-  by Tom Igoe
-
-  This example code is in the public domain.
-
-  http://www.arduino.cc/en/Tutorial/SerialEvent
-*/
-
-String inputString = "";         // a String to hold incoming data
-bool stringComplete = false;  // whether the string is complete
-int red=1000;
-int green=1000;
-int blue =100;
 
 void setup() {
   // initialize serial:
+    pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(9600);
-  // reserve 200 bytes for the inputString:
-  inputString.reserve(200);
-}
+     for (int i = 0; i < 40; i++) {
+     myvalue[i] =EEPROM.read(i);
+  
+       Serial.print(myvalue[i]);
+   
+  }
+       Serial.println(" ");
+    
+ }
 
 void loop() {
-  // print the string when a newline arrives:
-  if (stringComplete) {
-    Serial.print(red);
-    Serial.print(green);
-    Serial.print(blue);
-    // clear the string:
-    inputString = "";
-    stringComplete = false;
-  }
-   digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(red);                       // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-  delay(green);  
-  
-}
 
-/*
-  SerialEvent occurs whenever a new data comes in the hardware serial RX. This
-  routine is run between each time loop() runs, so using delay inside loop can
-  delay response. Multiple bytes of data may be available.
+  /*
+  while (Serial.available() > 0){
+     for (int i = 0; i < 10; i++) {
+     timeint =Serial.parseInt();//quanto loop
+     EEPROM.write(i,timeint);
+     delay(100);
+     myvalue[i] =timeint;
+     Serial.print("loop=");
+     Serial.print(myvalue[i]);
+     Serial.println(i);
+  }
 */
-void serialEvent() {
-  while (Serial.available()) {
-       red = Serial.parseInt();
-    // do it again:
-    green = Serial.parseInt();
-    // do it again:
-    blue = Serial.parseInt();
-    if (Serial.read() == '\n') {
-      stringComplete = true;
+
+
+     motor=0;
+      while (Serial.available()) {
+          
+      
+      myvalue[motor] = Serial.read();
+      EEPROM.write(motor,myvalue[motor]);
+      Serial.print( myvalue[motor]);
+      motor++;    
+    
+    
+        }
+
+
+
+  
+    interval=1000;
+
+  
+   currentMillis = millis();
+    if (currentMillis - previousMillis >= interval) {
+    // save the last time you blinked the LED
+    previousMillis = currentMillis;
+
+
+    if(bucla==0){
+
+      if(myvalue[0]==49){
+      digitalWrite(13, HIGH);
+       Serial.println("0 inauntru 1");
+      }else {
+      digitalWrite(13, LOW); 
+       Serial.println("0 inauntru 0");  
+      }
+
     }
+    if(bucla==1){
+   
+            if(myvalue[1]==49){
+      digitalWrite(LED_BUILTIN, HIGH);
+       Serial.println("1 inauntru 1");
+      }else {
+      digitalWrite(LED_BUILTIN, LOW);
+       Serial.println("1 inauntru 0");   
+      }
+    }
+    if(bucla==2){
+            if(myvalue[2]==49){
+      digitalWrite(LED_BUILTIN, HIGH);
+         Serial.println("2 inauntru 1");
+      }else {
+      digitalWrite(LED_BUILTIN, LOW);
+         Serial.println("2 inauntru 0");   
+      }
+    }
+    if(bucla==3){
+            if(myvalue[3]==49){
+      digitalWrite(LED_BUILTIN, HIGH);
+      }else {
+      digitalWrite(LED_BUILTIN, LOW);   
+      }
+    }
+    if(bucla==4){
+            if(myvalue[4]==49){
+      digitalWrite(LED_BUILTIN, 1);
+      }else {
+      digitalWrite(LED_BUILTIN, 0);   
+      }
+    }
+    if(bucla==5){
+            if(myvalue[5]==49){
+      digitalWrite(LED_BUILTIN, 1);
+      }else {
+      digitalWrite(LED_BUILTIN, 0);   
+      }
+    }
+    if(bucla==6){
+            if(myvalue[6]==49){
+      digitalWrite(LED_BUILTIN, 1);
+      }else {
+      digitalWrite(LED_BUILTIN, 0);   
+      }
+    }
+    if(bucla==7){
+            if(myvalue[7]==49){
+      digitalWrite(LED_BUILTIN, 1);
+      }else {
+      digitalWrite(LED_BUILTIN, 0);   
+      }
+    }
+    if(bucla==8){
+            if(myvalue[8]==49){
+      digitalWrite(LED_BUILTIN, 1);
+      }else {
+      digitalWrite(LED_BUILTIN, 0);   
+      }
+    }
+    if(bucla==9){
+            if(myvalue[9]==49){
+      digitalWrite(LED_BUILTIN, 1);
+      }else {
+      digitalWrite(LED_BUILTIN, 0);   
+      }
+    }
+
+
+
+    // set the LED with the ledState of the variable:
+    digitalWrite(LED_BUILTIN, ledState);
+  
+    bucla ++;
+    if(bucla>9) bucla=0;
+    
   }
 }
