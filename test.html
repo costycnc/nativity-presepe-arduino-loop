@@ -2,7 +2,7 @@
 <textarea id="costy"rows="1" cols="50">
 </textarea>
 <button onclick="myFunction()">Create</button>
-<button onclick="copyclip()">Copy</button>
+<button onclick="copyclip()">Copy to clipboard</button>
 <table>
 	<tbody>
                 <tr>
@@ -16,82 +16,82 @@
 	
 		<tr>
                         <td>Time 0</td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
 			
 		</tr>
 		<tr>
 			<td>Time 1</td>
-                        <td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
+                        <td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
 			
 		</tr>
 		<tr>
 			<td>Time 2</td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
 			
 		</tr>
 		<tr>
 			<td>Time 3</td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
 			
 		</tr>
 		<tr>
 			<td>Time 4</td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
 			
 		</tr>
 		<tr>
 			<td>Time 5</td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
 			
 		</tr>
 		<tr>
 			<td>Time 6</td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
 			
 		</tr>
 		<tr>
 			<td>Time 7</td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
 			
 		</tr>
 		<tr>
 			<td>Time 8</td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
 			
 		</tr>
 		<tr>
 			<td>Time 9</td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
-			<td><input  type="text" value="0"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
 			
 		</tr>
 
@@ -106,7 +106,15 @@ function myFunction() {
  document.getElementById("costy").value="";
 for (i = 0; i < 120; i++) { 
 s=document.getElementById("costy").value;
-s=s+document.getElementsByTagName("input")[i].value;
+if(document.getElementsByTagName("input")[i].checked)
+ {
+s=s+"1";
+}else {
+s=s+"0";
+}
+
+
+
 document.getElementById("costy").value=s;
 }
 }
