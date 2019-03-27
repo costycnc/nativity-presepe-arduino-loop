@@ -14,6 +14,8 @@ function setStatus(status) {
   document.getElementById('status').innerText = status;
 }
 
+
+
 function buildPortPicker(ports) {
   var eligiblePorts = ports.filter(function(port) {
     return !port.path.match(/[Bb]luetooth/);
@@ -51,7 +53,24 @@ var str2ab = function(str) {
 };
 
 onload = function() {
+  
+   document.getElementById('costy').onclick = function() {
+     var s="";
+      
+for (i = 1; i < 120; i++) { 
+if(document.getElementsByTagName("input")[i].checked)
+ {
+s=s+"1";
+}else {
+s=s+"0";
+}
+  document.getElementById("value").value=s;
+}
+     
 
+
+};
+  
   document.getElementById('button').onclick = function() {
  //var msg = "01100011000011110000111";
      var msg = document.getElementById('value').value;
