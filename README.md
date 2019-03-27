@@ -1,6 +1,7 @@
 # arduino-loop
 create a loop for nativity scene
-
+tons of examples chrome extensions https://github.com/GoogleChrome
+inspired servo https://github.com/GoogleChrome/chrome-app-samples
 move serial folder to chrome://extensions/
 Keep in mind that need have activated modalita svilupatore.
 
