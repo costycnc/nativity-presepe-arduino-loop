@@ -1,9 +1,9 @@
 {
-  "name": "Servo Serial Sample",
-  "version": "0.4",
+  "name": "Nativity arduino loop",
+  "version": "0.1",
   "manifest_version": 2,
   "minimum_chrome_version": "23",
-  "description": "Show off serial functionality.",
+  "description": "Command loop motors and lights.",
 
   "app": {
     "background": {
@@ -12,8 +12,7 @@
   },
 
   "icons": {
-    "16": "assets/icon-16x16.jpeg",
-    "128": "assets/icon-128x128.jpeg"
+    "128": "128.png"
   },
 
   "permissions": [

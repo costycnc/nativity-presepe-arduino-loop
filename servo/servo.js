@@ -7,7 +7,7 @@ function onOpen(connectionInfo) {
   }
   connectionId = connectionInfo.connectionId;
   setStatus('Connected');
-  setPosition(0);
+  
 };
 
 function setStatus(status) {

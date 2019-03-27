@@ -2,10 +2,9 @@
 <html>
 <head>
   <script src="servo.js"></script>
-  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="container">
+  <div>
     <label>
       Port:
       <select id="port-picker"></select>
@@ -18,8 +17,8 @@
 
     <label>
       <button id="button">send</button>
-      Input:
-      <input id="value" type="text"  value="00000000000000000">
+      
+      <input id="value" type="text" maxlength="40" size="40" value="0000000000000000000000000000000000000000">
     </label>
 <label>
   <table id="costy">
@@ -34,16 +33,8 @@
 		</tr>
 	
 		<tr>
-                        <td>Time 0</td>
+                        <td>Time 1</td>
 			<td><input type="checkbox"></td>
-			<td><input type="checkbox"></td>
-			<td><input type="checkbox"></td>
-			<td><input type="checkbox"></td>
-			
-		</tr>
-		<tr>
-			<td>Time 1</td>
-                        <td><input type="checkbox"></td>
 			<td><input type="checkbox"></td>
 			<td><input type="checkbox"></td>
 			<td><input type="checkbox"></td>
@@ -51,7 +42,7 @@
 		</tr>
 		<tr>
 			<td>Time 2</td>
-			<td><input type="checkbox"></td>
+                <td><input type="checkbox"></td>
 			<td><input type="checkbox"></td>
 			<td><input type="checkbox"></td>
 			<td><input type="checkbox"></td>
@@ -107,6 +98,14 @@
 		</tr>
 		<tr>
 			<td>Time 9</td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			<td><input type="checkbox"></td>
+			
+		</tr>
+		<tr>
+			<td>Time 10</td>
 			<td><input type="checkbox"></td>
 			<td><input type="checkbox"></td>
 			<td><input type="checkbox"></td>
