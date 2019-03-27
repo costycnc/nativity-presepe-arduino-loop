@@ -1,6 +1,8 @@
 # arduino-loop
 create a loop for nativity scene
 
+https://chrome.google.com/webstore/detail/presepe-costycnc/ioiflpkcljambpbfendghnbndiaomcnb
+
 tons of examples chrome extensions https://github.com/GoogleChrome
 
 inspired servo https://github.com/GoogleChrome/chrome-app-samples
