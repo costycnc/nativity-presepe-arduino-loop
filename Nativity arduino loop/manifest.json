@@ -1,0 +1,21 @@
+{
+  "name": "Nativity arduino loop",
+  "version": "0.1",
+  "manifest_version": 2,
+  "minimum_chrome_version": "23",
+  "description": "Command loop motors and lights.",
+
+  "app": {
+    "background": {
+      "scripts": [ "background.js" ]
+    }
+  },
+
+  "icons": {
+    "128": "128.png"
+  },
+
+  "permissions": [
+    "serial"
+  ]
+}
